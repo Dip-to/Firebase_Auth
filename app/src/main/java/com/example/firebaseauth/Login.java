@@ -3,16 +3,12 @@ package com.example.firebaseauth;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    private Button next;
+public class Login extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        next=findViewById(R.id.button);
-
-
+        setContentView(R.layout.activity_login);
     }
 }
