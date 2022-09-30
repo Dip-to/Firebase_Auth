@@ -14,6 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,6 +33,8 @@ public class Login extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     private AppCompatButton login_button;
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +47,32 @@ public class Login extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         final TextView signUp = findViewById(R.id.sign_up_click);
         mAuth = FirebaseAuth.getInstance();
-
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestEmail().build();
+        gsc = GoogleSignIn.getClient(this , gso);
         l_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //olin er kaj
+                Intent signInIntent = gsc.getSignInIntent();
+                startActivityForResult(signInIntent,1000);
             }
         });
-
-
+        @Override
+        protected void OnActivityResult(int requestCode , int resultCode , Intent data)
+        {
+            super.onActivityResult(requestCode,resultCode,data);
+            if(requestCode == 1000)
+            {
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                task.getResult(ApiException.class);
+                navigateToSecondActivity();
+            }
+        }
+        void navigateToSecondActivity()
+        {
+            finish();
+            Intent intent = new Intent(Login.this, Homepage.class);
+            startActivity(intent);
+        }
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
