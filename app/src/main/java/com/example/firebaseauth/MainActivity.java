@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getSupportActionBar().hide();
                 startActivity(new Intent(MainActivity.this, Login.class));
             }
         });
-
     }
 }
