@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Homepage">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="179dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="320dp"
+        android:text="Welcome"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -92,7 +92,7 @@ public class Signup extends AppCompatActivity {
                                 try {
                                     throw task.getException();
                                 } catch (Exception e) {
-                                    Toast.makeText(getApplicationContext(), "Email already taken! Try login", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }

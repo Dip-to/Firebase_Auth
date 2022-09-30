@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dipto/AndroidStudioProjects/FirebaseAuth/app/src/main/res/layout/activity_homepage.xml" value="0.34103260869565216" />
         <entry key="..\:/Users/Dipto/AndroidStudioProjects/FirebaseAuth/app/src/main/res/layout/activity_login.xml" value="0.34103260869565216" />
         <entry key="..\:/Users/Dipto/AndroidStudioProjects/FirebaseAuth/app/src/main/res/layout/activity_main.xml" value="0.34103260869565216" />
+        <entry key="..\:/Users/Dipto/AndroidStudioProjects/FirebaseAuth/app/src/main/res/layout/activity_signup.xml" value="0.34103260869565216" />
       </map>
     </option>
   </component>
