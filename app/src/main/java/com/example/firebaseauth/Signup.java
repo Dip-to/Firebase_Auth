@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -36,6 +38,13 @@ public class Signup extends AppCompatActivity {
         signup_button = findViewById(R.id.sup_button);
         login = findViewById(R.id.login_page_back);
         progressDialog = new ProgressDialog(this);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Signup.this, Login.class));
+            }
+        });
 
     }
 }
